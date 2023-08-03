@@ -200,20 +200,25 @@
 
     <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
     <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script>
-        fetch("https://fakestoreapi.com/products")
-        .then (function (res){
-            return res.json();
-        })
-        .then (function (data){
-            data.forEach(element => {
-                $("main-image-container").append(`<div class="col">
-<img alt="" src="${element.image}" width="250" height="300">
-<p>This is column 1</p>
-</div>`)
-                
-            });
-        })
+                $(document).ready(function(){
+
+                    fetch("https://fakestoreapi.com/products")
+                .then (function (res){
+                    return res.json();
+                })
+            .then (function (data){
+                data.forEach(element => {
+                    $("main-image-container").append(`<div class="col">
+    <img alt="" src="${element.image}" width="250" height="300">
+    <p>This is column 1</p>
+    </div>`)
+                    
+                });
+            })
+            })
+        
     </script>
 </body>
 
